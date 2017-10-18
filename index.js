@@ -21,7 +21,17 @@ let jokes = [
     "How do functions break up? They stop calling each other!",
     "When do two functions fight? When they have arguments",
     "What happened to the function that ran away? It never returned",
-    "Why did the web developer send a few extra bucks to his hosting provider? Because he heard that he should always tip his server.",
+    "Why did the web developer send a few extra bucks to his hosting provider? Because he heard that he should always tip his server.", 
+    "Knock knock. Race condition. Who's there?",
+    "What's the best part about UDP jokes? I don't care if you get them.",
+    "A SQL statement walks into a bar and sees two tables. It approaches, and asks may I join?",
+    "A web developer walks into a bar, and immediately leaves in disgust after seeing it was laid out in tables.",
+    "Yo' mama so FAT she can't save files larger than 4 Gigabites",
+    "Why do programmers confuse Halloween and Christmas? Because Oct 31 = Dec 25.",
+    "If you put a million monkeys at a million keyboards, one of them will eventually write a java program. The rest will write Perl programs",
+    "An SEO expert walks into a bar, pub, liquore store, brewery, alchohol, beer, whiskey, vodka, bourbon, rum",
+    "A man walks into a bar and asks for 1.4 root beers. The bartender replies, 'I'll have to charge you extra, thats a rootbeer float'. The man says 'In that case, make it a double.'",  
+    "A java programmer sets two glasses of water on his bedside table beforegoing to sleep. A full one in case he gets thirsty, and an empty one in case he doesn't", 
 ];
 
 exports.handler = (event, context, callback) => {
@@ -38,7 +48,6 @@ let handlers = {
     'GetJokeIntent': function() {
         let idx = Math.floor(jokes.length * Math.random());
         let joke = jokes[idx];
-
         let out = "Joke: " + joke;
         this.emit(":tellWithCard", out, skill, joke);
     },
